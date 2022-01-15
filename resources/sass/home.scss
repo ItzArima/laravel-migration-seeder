@@ -6,7 +6,7 @@ main{
         height: 100vh;
         display: flex;
         justify-content: center;
-        margin-bottom: 3rem;
+        margin-bottom: 7.5rem;
 
         img{
             height: 100%;
@@ -47,10 +47,16 @@ main{
                     display: flex;
                     flex-direction: column;
                     overflow: hidden;
+                    padding-bottom: 2rem;
+                    box-shadow: 0 4px 8px 0 rgba($color: #000000, $alpha: 0.35);
     
                     &>div{
                         margin-bottom:2rem;
                         padding: 0 2rem;
+                    }
+
+                    &>div:last-of-type{
+                        margin: 0;
                     }
     
                     .image{

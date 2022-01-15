@@ -4,7 +4,7 @@ main .jumbo-container {
   height: 100vh;
   display: flex;
   justify-content: center;
-  margin-bottom: 3rem;
+  margin-bottom: 7.5rem;
 }
 
 main .jumbo-container img {
@@ -49,11 +49,17 @@ main .jumbo-container .suggested-container .cards-container .card {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  padding-bottom: 2rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.35);
 }
 
 main .jumbo-container .suggested-container .cards-container .card > div {
   margin-bottom: 2rem;
   padding: 0 2rem;
+}
+
+main .jumbo-container .suggested-container .cards-container .card > div:last-of-type {
+  margin: 0;
 }
 
 main .jumbo-container .suggested-container .cards-container .card .image {

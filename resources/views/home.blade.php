@@ -10,31 +10,35 @@
             <div class="text-container">
                 <h1>Trips for the life</h1>
             </div>
-            <div class="suggested-container">
-                <h1>Suggested Trips</h1>
-                <div class="cards-container">
-                    @foreach($random as $key => $card)                  
-                        <div class="card">
-                            <div class="image">
-                                <img src="https://picsum.photos/id/{{$images[$key]['id']}}/300/200" alt="">
-                            </div>  
-                            <div class="departure">
-                                <h2>From: {{$card->departure}}</h2>
+            @if(count($random)>0)
+                <div class="suggested-container">
+                    <h1>Suggested Trips</h1>
+                    <div class="cards-container">
+                        @foreach($random as $key => $card)                  
+                            <div class="card">
+                                <div class="image">
+                                    <img src="https://picsum.photos/id/{{$images[$key]['id']}}/300/200" alt="">
+                                </div>  
+                                <div class="departure">
+                                    <h2>From: {{$card->departure}}</h2>
+                                </div>
+                                <div class="destination">
+                                    <h2>To: {{$card->destination}}</h2>
+                                </div>
+                                <div class="price">
+                                    <p>{{$card->price}} EUR</p>
+                                </div>
+                                <div class="datetime">
+                                    <p>Date and Time</p>
+                                    <p>{{$card->date}}, {{$card->time}}</p>
+                                </div>
                             </div>
-                            <div class="destination">
-                                <h2>To: {{$card->destination}}</h2>
-                            </div>
-                            <div class="price">
-                                <p>{{$card->price}} EUR</p>
-                            </div>
-                            <div class="datetime">
-                                <p>Date and Time</p>
-                                <p>{{$card->date}}, {{$card->time}}</p>
-                            </div>
-                        </div>
-                    @endforeach
+                        @endforeach
+                    </div>
                 </div>
-            </div>
+            @endif
         </div>
+
+        <h1>test</h1>
     </main>
 @endsection
