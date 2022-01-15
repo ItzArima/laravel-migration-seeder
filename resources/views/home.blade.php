@@ -38,7 +38,8 @@
                 </div>
             @endif
         </div>
-
-        <h1>test</h1>
+        <div class="slogan-container">
+            <h1>Wherever you want, Whenever you want</h1>
+        </div>
     </main>
 @endsection

@@ -39,10 +39,10 @@ class FlightController extends Controller
         $flight = new Flight;
         $flight->departure = $request->departure;
         $flight->destination = $request->destination;
-        $flight->price = $request->price;
+        $flight->price = number_format((float)$request->price, 2 , '.' , '');
         $flight->date = $request->date;
         $flight->time = $request->time;
-        
+        dd($flight->price);
         $flight->save();
 
         return redirect()->back()->with(session()->flash('success', 'Flight added succesfully'));
@@ -90,6 +90,8 @@ class FlightController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $flight = Flight::find($id);
+        $flight->delete;
+        return redirect()->back()->with(session()->flash('success', 'Flight deleted succesfully'));
     }
 }

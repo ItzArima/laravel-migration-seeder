@@ -71,3 +71,9 @@ main .jumbo-container .suggested-container .cards-container .card .image img {
      object-fit: contain;
 }
 
+main .slogan-container {
+  color: white;
+  text-align: center;
+  padding: 3rem 0;
+}
+
