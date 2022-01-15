@@ -91,7 +91,7 @@ class FlightController extends Controller
     public function destroy($id)
     {
         $flight = Flight::find($id);
-        $flight->delete;
+        $flight->delete();
         return redirect()->back()->with(session()->flash('success', 'Flight deleted succesfully'));
     }
 }

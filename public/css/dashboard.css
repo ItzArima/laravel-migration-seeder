@@ -68,6 +68,7 @@ main .dashboard-container .db-content-container .row-container > form button {
   border: 1px solid white;
   color: white;
   font-weight: 900;
+  cursor: pointer;
 }
 
 main .dashboard-container .db-content-container .row-container .row {
