@@ -5,6 +5,11 @@
 
 @section('content')
     <main>
-        <h1>This is the main</h1>
+        <div class="jumbo-container">
+            <img src="https://picsum.photos/id/1083/1920/1080" alt="">
+            <div class="text-container">
+                <h1>Trips for the life</h1>
+            </div>
+        </div>
     </main>
 @endsection
