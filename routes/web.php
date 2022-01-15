@@ -16,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'PageController@home')->name('home');
 
 Route::resource('flight' , 'FlightController');
+
+Route::get('dashboard', 'PageController@dashboard')->name('dashboard');
