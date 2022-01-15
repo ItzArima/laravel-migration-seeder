@@ -6,6 +6,7 @@ main{
         height: 100vh;
         display: flex;
         justify-content: center;
+        margin-bottom: 3rem;
 
         img{
             height: 100%;
@@ -19,6 +20,47 @@ main{
             font-size: xx-large;
             color: white;
             top: 10%;
+        }
+
+        .suggested-container{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 0 7rem;
+            bottom: -7rem;
+
+            &>h1{
+                padding-bottom: 1.5rem;
+                color: white;
+            }
+            
+            .cards-container{
+                display: flex;
+
+                .card{
+                    z-index: 1;
+                    backdrop-filter: brightness(0.5) blur(5px);
+                    color: white;
+                    width: calc(25% - 2rem);
+                    margin: 0 1rem;
+                    border-radius: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    overflow: hidden;
+    
+                    &>div{
+                        margin-bottom:2rem;
+                        padding: 0 2rem;
+                    }
+    
+                    .image{
+                        padding: 0;
+                        img{
+                            object-fit: contain;
+                        }
+                    }
+                }
+            }
         }
     }
 }

@@ -4,6 +4,7 @@ main .jumbo-container {
   height: 100vh;
   display: flex;
   justify-content: center;
+  margin-bottom: 3rem;
 }
 
 main .jumbo-container img {
@@ -18,5 +19,49 @@ main .jumbo-container .text-container {
   font-size: xx-large;
   color: white;
   top: 10%;
+}
+
+main .jumbo-container .suggested-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 0 7rem;
+  bottom: -7rem;
+}
+
+main .jumbo-container .suggested-container > h1 {
+  padding-bottom: 1.5rem;
+  color: white;
+}
+
+main .jumbo-container .suggested-container .cards-container {
+  display: flex;
+}
+
+main .jumbo-container .suggested-container .cards-container .card {
+  z-index: 1;
+  -webkit-backdrop-filter: brightness(0.5) blur(5px);
+          backdrop-filter: brightness(0.5) blur(5px);
+  color: white;
+  width: calc(25% - 2rem);
+  margin: 0 1rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+main .jumbo-container .suggested-container .cards-container .card > div {
+  margin-bottom: 2rem;
+  padding: 0 2rem;
+}
+
+main .jumbo-container .suggested-container .cards-container .card .image {
+  padding: 0;
+}
+
+main .jumbo-container .suggested-container .cards-container .card .image img {
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
