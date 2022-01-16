@@ -19,4 +19,4 @@ Route::get('/home', 'PageController@home')->name('home');
 
 Route::resource('flight' , 'FlightController');
 
-Route::get('dashboard', 'PageController@dashboard')->name('dashboard');
+Route::get('dashboard/{page}' , 'PageController@dashboard')->name('dashboard');

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Model\Flight;
 
 use DB;
+use Illuminate\Validation\Rules\Exists;
 
 class PageController extends Controller
 {
@@ -41,7 +42,20 @@ class PageController extends Controller
         return view('home' , compact('random', 'images'));
     }
 
-    public function dashboard(){
-        return view('dashboard');
+    public function dashboard($page){
+        $flights = Flight::all();
+        $end = $page * 15;
+        $start = ($page - 1) * 15;
+        $display = [];
+        $nonext = 0;
+        for($i=$start; $i<$end; $i++){
+            if(isset($flights[$i])){
+                array_push($display , $flights[$i]);
+            }
+            if(!isset($flights[$i+1])){
+                $nonext = 1;
+            }
+        }
+        return view('dashboard', compact('display' , 'page' , 'nonext'));
     }
 }

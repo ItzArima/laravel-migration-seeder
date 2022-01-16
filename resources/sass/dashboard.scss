@@ -1,6 +1,7 @@
 main{
     padding-top: 60px;
     padding-bottom: 2rem;
+    position: relative;
 
     .success{
         position: absolute;
@@ -42,7 +43,9 @@ main{
         }
         .db-content-container{
             margin-top: 2rem;
-            padding: 0 5rem;width: 100%;
+            padding: 0 5rem;
+            width: 100%;
+
             .row-container{
                 display: flex;
                 width: 100%;
@@ -88,6 +91,24 @@ main{
     
             .row:first-of-type{
                 border-top: 1px solid white;
+            }
+
+            .page-selection-container{
+                display: flex;
+                justify-content: center;
+                bottom: 1rem;
+                width: 10%;
+                left: 45%;
+                position: absolute;
+
+                a , p{
+                    color: white;
+                    font-weight: 600;
+                }
+
+                p{
+                    margin: 0 1rem;
+                }
             }
         }
     }

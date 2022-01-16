@@ -1,6 +1,7 @@
 main {
   padding-top: 60px;
   padding-bottom: 2rem;
+  position: relative;
 }
 
 main .success {
@@ -92,5 +93,24 @@ main .dashboard-container .db-content-container .row-container .row .id {
 
 main .dashboard-container .db-content-container .row:first-of-type {
   border-top: 1px solid white;
+}
+
+main .dashboard-container .db-content-container .page-selection-container {
+  display: flex;
+  justify-content: center;
+  bottom: 1rem;
+  width: 10%;
+  left: 45%;
+  position: absolute;
+}
+
+main .dashboard-container .db-content-container .page-selection-container a,
+main .dashboard-container .db-content-container .page-selection-container p {
+  color: white;
+  font-weight: 600;
+}
+
+main .dashboard-container .db-content-container .page-selection-container p {
+  margin: 0 1rem;
 }
 

@@ -7,6 +7,6 @@ return [
     ],
     [
         'name' => 'dashboard',
-        'href' => 'dashboard'
+        'href' => 'dashboard/1'
     ],
 ];

@@ -48,7 +48,7 @@
                     </div>
                 </div>
                 @if(count(DB::table('flights')->get()) > 0)
-                    @foreach(DB::table('flights')->get() as $item)
+                    @foreach($display as $item)
                         <div class="row-container">
                             <div class="row">
                                 <div class="id">
@@ -80,6 +80,15 @@
                 @else
                     <h1>Seems that your flights table is empty!</h1>
                 @endif
+                <div class="page-selection-container">
+                    @if($page != 1)
+                        <a href="{{route('dashboard', ['page' => $page-1])}}">Previous</a>
+                    @endif
+                    <p>{{$page}}</p>
+                    @if($nonext != 1)
+                        <a href="{{route('dashboard', ['page' => $page+1])}}">Next</a>
+                    @endif
+                </div>
             </div>
         </div>
     </main>
