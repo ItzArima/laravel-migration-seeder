@@ -95,6 +95,9 @@ class FlightController extends Controller
         if((count($flights) % 15) == 0){
             /* dd(count($flights)); */
             $page = count($flights) / 15;
+            if($page == 0){
+                $page = 1;
+            }
             return redirect(route('dashboard' , $page))->with(session()->flash('success', 'Flight deleted succesfully'));
         }
         return redirect()->back()->with(session()->flash('success', 'Flight deleted succesfully'));
