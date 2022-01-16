@@ -19,6 +19,11 @@ header .header-container {
           backdrop-filter: blur(5px) brightness(1.3);
 }
 
+header .header-container .left .logo a {
+  color: white;
+  text-decoration: none;
+}
+
 header .header-container .right {
   width: 20%;
 }

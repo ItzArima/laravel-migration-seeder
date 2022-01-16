@@ -78,7 +78,10 @@
                         </div>
                     @endforeach
                 @else
-                    <h1>Seems that your flights table is empty!</h1>
+                    <div class="empty" style="color:white;">
+                        <h1>Seems that your flights table is empty!</h1>
+                        <p>Tip: There is a seeder with faker factory.</p>
+                    </div>
                 @endif
                 <div class="page-selection-container">
                     @if($page != 1)

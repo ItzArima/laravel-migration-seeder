@@ -2,7 +2,7 @@
     <div class="header-container">
         <div class="left">
             <div class="logo">
-                 <h1>R<em>Trips</em></h1>
+                <a href="{{route('home')}}"><h1>R<em>Trips</em></h1></a>
             </div>
         </div>
         <div class="right">
