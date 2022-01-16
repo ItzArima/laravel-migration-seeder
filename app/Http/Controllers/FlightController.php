@@ -42,7 +42,6 @@ class FlightController extends Controller
         $flight->price = number_format((float)$request->price, 2 , '.' , '');
         $flight->date = $request->date;
         $flight->time = $request->time;
-        dd($flight->price);
         $flight->save();
 
         return redirect()->back()->with(session()->flash('success', 'Flight added succesfully'));
@@ -92,6 +91,12 @@ class FlightController extends Controller
     {
         $flight = Flight::find($id);
         $flight->delete();
+        $flights = Flight::all();
+        if((count($flights) % 15) == 0){
+            /* dd(count($flights)); */
+            $page = count($flights) / 15;
+            return redirect(route('dashboard' , $page))->with(session()->flash('success', 'Flight deleted succesfully'));
+        }
         return redirect()->back()->with(session()->flash('success', 'Flight deleted succesfully'));
     }
 }
