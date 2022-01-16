@@ -7,8 +7,8 @@
         </div>
         <div class="right">
             <nav>
-                @foreach(config('header-links') as $item)
-                    <a href="{{$item['href']}}">{{$item['name']}}</a>
+                @foreach(config('header-links') as $key => $item)
+                    <a href="{{$key == 1 ? $item['href'] : route($item['href'])}}">{{$item['name']}}</a>
                 @endforeach
             </nav>
         </div>
