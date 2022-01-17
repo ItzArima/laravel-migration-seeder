@@ -14,6 +14,7 @@ class PageController extends Controller
     public function home(){
         $flights = Flight::all();
         $random = [];
+        $images = [];
         if(count($flights) > 0){
             for($i = 0; $i<4; $i++){
                 $num = rand(0,count($flights)-1);
@@ -25,7 +26,7 @@ class PageController extends Controller
                 }
             }
         }
-        $images=[
+        $img=[
             [
                 'id' => 1011,
             ],
@@ -38,7 +39,31 @@ class PageController extends Controller
             [
                 'id' => 158,
             ],
+            [
+                'id' => 1016,
+            ],
+            [
+                'id' => 1018,
+            ],
+            [
+                'id' => 1067,
+            ],
+            [
+                'id' => 108,
+            ],
+            [
+                'id' => 117,
+            ],
         ];
+        for($i = 0; $i<4; $i++){
+            $num = rand(0,count($img)-1);
+            if(!in_array($img[$num], $images)){
+                array_push($images, $img[$num]);
+            }
+            else{
+                $i--;
+            }
+        }
         return view('home' , compact('random', 'images'));
     }
 
