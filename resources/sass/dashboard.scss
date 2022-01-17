@@ -3,16 +3,23 @@ main{
     padding-bottom: 2rem;
     position: relative;
 
-    .success{
+    .success , .error{
         position: absolute;
         text-align: center;
         z-index: 9999;
         top: 0;
         left: 45%;
         width: 10%;
-        background-color: green;
         padding: 0.5rem 1rem;
         transition: all 1.5s;
+    }
+
+    .success{
+        background-color: green;
+    }
+
+    .error{
+        background-color: red;
     }
 
     .disappear{
@@ -38,6 +45,21 @@ main{
                 
                 input{
                     padding: 0.25rem 0.5rem;
+                }
+            }
+            &>a{
+                background-color: transparent;
+                border: 2px solid red;
+                border-radius: 5px;
+                padding: 0.5rem 1rem;
+                margin-left: 1rem;
+                font-weight: 600;
+                transition: all 0.3s;
+                text-decoration: none;
+                color: white;
+
+                &:hover{
+                    background-color: red;
                 }
             }
         }

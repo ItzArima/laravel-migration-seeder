@@ -6,8 +6,12 @@
 @section('content')
     <main>
         @if(Session::has('success'))
-            <div class="success">
+            <div class="success popup">
                 <p><strong>{{Session::get('success') }}</strong></p>
+            </div>
+        @elseif(Session::has('error'))
+            <div class="error popup">
+                <p><strong>{{Session::get('error') }}</strong></p>
             </div>
         @endif
         <div class="dashboard-container">
@@ -23,6 +27,7 @@
                     <input type="time" name="time" required>
                     <input type="submit" value="submit">
                 </form>
+                <a href="{{route('seed')}}">Generate random data</a>
             </div>
             <div class="db-content-container">
                 <div class="row-container">
@@ -97,7 +102,7 @@
     </main>
 
     <script>
-        let popup = document.querySelector('.success');
+        let popup = document.querySelector('.popup');
         if(popup != null){
             let displayTimeout = setTimeout(function disappear(){
                 popup.style.display ='none';

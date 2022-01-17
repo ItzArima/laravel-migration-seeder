@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Model\Flight;
 
+use Illuminate\Support\Facades\Artisan;
+
 class FlightController extends Controller
 {
     /**
@@ -44,7 +46,9 @@ class FlightController extends Controller
         $flight->time = $request->time;
         $flight->save();
 
-        return redirect()->back()->with(session()->flash('success', 'Flight added succesfully'));
+        $flights = Flight::all();
+        $page = ceil(count($flights) / 15);
+        return redirect(route('dashboard' , $page))->with(session()->flash('success', 'Flight added succesfully'));
     }
 
     /**
@@ -90,16 +94,35 @@ class FlightController extends Controller
     public function destroy($id)
     {
         $flight = Flight::find($id);
+        $flights = Flight::all();
+        $page = floor(count($flights) / 15);
+        if($page == 0){
+            $page = 1;
+        }
+        if(null == Flight::find($id)){
+            return redirect(route('dashboard' , $page))->with(session()->flash('error', 'Please wait at least 1 second before deleting again'));
+        }
         $flight->delete();
         $flights = Flight::all();
         if((count($flights) % 15) == 0){
-            /* dd(count($flights)); */
-            $page = count($flights) / 15;
             if($page == 0){
                 $page = 1;
             }
-            return redirect(route('dashboard' , $page))->with(session()->flash('success', 'Flight deleted succesfully'));
+            return redirect(route('dashboard' , $page))->with(session()->flash('success', 'Flight deleted succesfully,wait at least 1 second before deleting again'));
         }
-        return redirect()->back()->with(session()->flash('success', 'Flight deleted succesfully'));
+        return redirect()->back()->with(session()->flash('success', 'Flight deleted succesfully,wait at least 1 second before deleting again'));
+    }
+
+    /**
+     * Seed the db.
+     *
+     */
+    public function seed(){
+        Artisan::call('db:seed', [
+            '--class' => 'FlightSeeder',
+        ]);
+        $flights = Flight::all();
+        $page = ceil(count($flights) / 15);
+        return redirect(route('dashboard' , $page))->with(session()->flash('success', 'added 15 elements to db'));
     }
 }

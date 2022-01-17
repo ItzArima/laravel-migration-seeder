@@ -58,4 +58,8 @@ class PageController extends Controller
         }
         return view('dashboard', compact('display' , 'page' , 'nonext'));
     }
+
+    public function getPage(){
+        return redirect(route('dashboard' , 1));
+    }
 }
