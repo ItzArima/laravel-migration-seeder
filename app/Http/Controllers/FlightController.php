@@ -112,17 +112,4 @@ class FlightController extends Controller
         }
         return redirect()->back()->with(session()->flash('success', 'Flight deleted succesfully,wait at least 1 second before deleting again'));
     }
-
-    /**
-     * Seed the db.
-     *
-     */
-    public function seed(){
-        Artisan::call('db:seed', [
-            '--class' => 'FlightSeeder',
-        ]);
-        $flights = Flight::all();
-        $page = ceil(count($flights) / 15);
-        return redirect(route('dashboard' , $page))->with(session()->flash('success', 'added 15 elements to db'));
-    }
 }

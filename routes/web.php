@@ -17,10 +17,7 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 Route::get('/', 'PageController@home')->name('home');
 
-Route::resource('flight' , 'FlightController');
+Route::get('/blog', 'PageController@blog')->name('blog');
 
-Route::get('dashboard/{page}' , 'PageController@dashboard')->name('dashboard');
+Route::get('/news', 'PageController@news')->name('news');
 
-Route::get('dashboard' , 'Pagecontroller@getPage')->name('getpage');
-
-Route::get('seed' , 'FlightController@seed')->name('seed');

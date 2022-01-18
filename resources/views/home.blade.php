@@ -6,9 +6,10 @@
 @section('content')
     <main>
         <div class="jumbo-container">
-            <img src="https://picsum.photos/id/1083/1920/1080" alt="">
+            <img src="https://wallpaperbat.com/img/499515-plane-airport-hd-wallpaper-hd-wallpaper-4-us-us-navy-wallpaper-airplane-wallpaper-hd-wallpaper.jpg" alt="">
             <div class="text-container">
-                <h1>Trips for the life</h1>
+                <h1>R<em>Trips</em></h1>
+                <h3>Trips for the life</h3>
             </div>
             @if(count($random)>0)
                 <div class="suggested-container">

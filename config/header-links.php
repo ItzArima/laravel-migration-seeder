@@ -6,7 +6,11 @@ return [
         'href' => 'home'
     ],
     [
-        'name' => 'dashboard',
-        'href' => 'getpage'
+        'name' => 'blog',
+        'href' => 'blog'
+    ],
+    [
+        'name' => 'news',
+        'href' => 'news'
     ],
 ];
