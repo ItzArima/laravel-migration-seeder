@@ -47,6 +47,7 @@ class PageController extends Controller
     }
 
     public function news(){
-        return view('news');
+        $articles = Article::all(); 
+        return view('news' , compact('articles'));
     }
 }

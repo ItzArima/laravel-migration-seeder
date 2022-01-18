@@ -1,0 +1,65 @@
+main{
+
+    .jumbo-container{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        .image{
+            width: 100%;
+
+            img{
+                width: 100%;
+                height: 50vh;
+                object-fit: cover;
+                filter: brightness(0.7);
+            }
+        }
+
+        .title{
+            position: absolute;
+            color: white;
+            display: flex;
+        }
+    }
+
+    .news-container{
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .news{
+            display: flex;
+            justify-content: space-between;
+            width: 70%;
+            position: relative; 
+            padding: 1rem 0;
+            padding: 1rem;
+            border-bottom: 1px solid rgba($color: #fff, $alpha: 0.3);
+            text-align: right;
+
+            .right{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                .date{
+                    position: absolute;
+                    bottom: 1rem;
+                    right: 1rem;
+                }
+            }       
+        }
+
+        .reverse{
+            flex-direction: row-reverse;
+            text-align: left;
+
+            .date{
+                left: 1rem;
+                right: 0;
+            }
+        }
+    }
+}
