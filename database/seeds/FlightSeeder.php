@@ -21,7 +21,6 @@ class FlightSeeder extends Seeder
         for($i=0; $i<15; $i++){
             $newFlight = new Flight();
             $now = date('Y-m-d');
-            $date = 
             $newFlight->departure = $faker->city;
             $newFlight->destination = $faker->city;
             $newFlight->price = $faker->randomFloat($nbMaxDecimals = 2, $min = 0, $max = 1000);

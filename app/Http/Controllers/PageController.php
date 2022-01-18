@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Model\Flight;
 
+use App\Model\Article;
+
 use DB;
 use Illuminate\Validation\Rules\Exists;
 
@@ -40,7 +42,8 @@ class PageController extends Controller
     }
 
     public function blog(){
-        return view('blog');
+        $articles = Article::all(); 
+        return view('blog' , compact('articles'));
     }
 
     public function news(){
