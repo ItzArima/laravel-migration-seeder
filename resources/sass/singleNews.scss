@@ -1,0 +1,36 @@
+main{
+
+    .news-container{
+        display: flex;
+        width: 75%;
+        justify-content: space-between;
+        margin: 0 auto;
+        padding-top: 10rem;
+        position: relative;
+        .left{
+            width: 50%;
+
+            img{
+                width: 100%;
+            }
+        }
+
+        .right{
+            position: absolute;
+            left: 45%;
+            width: 55%;
+            backdrop-filter: blur(5px);
+            background-color: rgba($color: #fff, $alpha: 0.1);
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 30px;
+            padding: 2rem;
+            padding-bottom: 6rem;
+
+            .date{
+                position: absolute;
+                bottom: 2rem;
+                right: 2rem;
+            }
+        }
+    }
+}

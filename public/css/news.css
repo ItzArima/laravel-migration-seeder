@@ -31,10 +31,15 @@ main .news-container {
   align-items: center;
 }
 
-main .news-container .news {
+main .news-container a {
+  text-decoration: none;
+  width: 70%;
+  color: white;
+}
+
+main .news-container a .news {
   display: flex;
   justify-content: space-between;
-  width: 70%;
   position: relative;
   padding: 1rem 0;
   padding: 1rem;
@@ -42,24 +47,24 @@ main .news-container .news {
   text-align: right;
 }
 
-main .news-container .news .right {
+main .news-container a .news .right {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-main .news-container .news .right .date {
+main .news-container a .news .right .date {
   position: absolute;
   bottom: 1rem;
   right: 1rem;
 }
 
-main .news-container .reverse {
+main .news-container a .reverse {
   flex-direction: row-reverse;
   text-align: left;
 }
 
-main .news-container .reverse .date {
+main .news-container a .reverse .date {
   left: 1rem;
   right: 0;
 }

@@ -14,7 +14,7 @@
         </div>
         <div class="blog-container">
             @foreach($articles as $article)
-                <a href="{{route('single', $article['id'])}}">
+                <a href="{{route('singleBlog', $article['id'])}}">
                     <div class="card" style="color: white;">
                         <div class="right">
                             <div class="img">

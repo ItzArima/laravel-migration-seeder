@@ -16,4 +16,13 @@ class SingleController extends Controller
         return view('singles/singleBlog')->with(session()->flash('error' , 'ops , post not find'));
 
     }
+
+    public function news($id){
+        $article = Article::find($id);
+        if($article != null){
+            return view('singles/singleNews' , compact('article'));
+        }
+        return view('singles/singleNews')->with(session()->flash('error' , 'ops , post not find'));
+
+    }
 }
