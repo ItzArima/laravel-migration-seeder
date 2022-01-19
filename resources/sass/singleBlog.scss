@@ -1,0 +1,50 @@
+main{
+    min-height: calc(100vh - 38px);
+    position: relative;
+    .post-container{
+        text-align: center;
+        .image{
+            width: 100%;
+            height: 50vh;
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: 0% 150%;
+            background-repeat: no-repeat;
+            filter: brightness(0.7);
+        }
+
+        .title{
+            position: relative;
+            height: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: -1rem;
+            
+            h1{
+                backdrop-filter: blur(5px);
+                padding: 0.5rem 1rem;
+                border-radius: 10px;
+                border: 1px solid rgba($color: #fff, $alpha: 0.5);
+            }
+        }
+
+        .content{
+            width: 50%;
+            margin: 0 auto;
+            margin-top: 1rem;
+
+            .description{
+                text-align: left;
+            }
+
+            .infos{
+                display: flex;
+                justify-content: space-between;
+                position: absolute;
+                width: 50%;
+                bottom: 1.5rem;
+            }
+        }
+    }
+}

@@ -21,3 +21,5 @@ Route::get('/blog', 'PageController@blog')->name('blog');
 
 Route::get('/news', 'PageController@news')->name('news');
 
+Route::get('/news/{id}' , 'SingleController@blog')->name('single');
+
